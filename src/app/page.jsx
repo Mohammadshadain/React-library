@@ -1,6 +1,7 @@
-import React from 'react'
+'use client'
+
 import React,{Component} from 'react';
-import {header}'./compoents/header';
+// import {header}'./compoents/header';
 
 const HOME = () => {
   return (
