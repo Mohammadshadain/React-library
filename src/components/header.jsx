@@ -6,8 +6,8 @@ export default function Header() {
   const [flyerTwo, setFlyerTwo] = React.useState(false);
 
   return (
-    <header class="fixed top-0 w-full clearNav z-50">
-      <div class="max-w-5xl mx-auto flex flex-wrap p-5 flex-col md:flex-row">
+    <header class="fixed top-0 w-full clearNav z-50 bg-black">
+      <div class="max-w-5xl mx-auto flex flex-wrap p-5 flex-col md:flex-row ">
         <div className="flex flex-row items-center justify-between p-3 md:p-1">
           <a
             href="/"

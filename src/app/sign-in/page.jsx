@@ -1,6 +1,18 @@
 'use client'
 import { useFormik } from 'formik'
 import React from 'react'
+import * as Yup from 'yup';
+import signUp from '../sign-up/page';
+
+const loginSchema= Yup.object().shape({
+ email:Yup.string().required('email is required').email('Invailed email'),
+ password:Yup.string().required('password is required')
+ .matches(/[a-z]/,'must include a lower case')
+ .matches(/[A-z]/,'must include a upper case')
+ .matches(/[0-9]/,'must include a number')
+ .matches(/\w/,'must include a special character'),
+
+})
 
 
 const Login = () => {
@@ -10,11 +22,14 @@ const Login = () => {
       password:"",
 
     },
-    onSubmit(values){
+    onSubmit(values,{resetForm,setSubmitting}){
       console.log(values);
+      resetForm();
+      setSubmitting();
       
 
-    }
+    },
+    validationSchema:loginSchema
   })
  
   return (
@@ -105,9 +120,18 @@ const Login = () => {
                 </svg>
               </div>
             </div>
-            <p className="hidden text-xs text-red-600 mt-2" id="email-error">
-              Please include a valid email address so we can get back to you
-            </p>
+            {
+              login.touched.email &&(
+                <p className="text-xs text-red-600 mt-2" id="email-error">
+                  {
+                    login.errors.email
+                  }
+             
+                </p>
+
+              )
+            }
+           
           </div>
           {/* End Form Group */}
           {/* Form Group */}
@@ -149,9 +173,16 @@ const Login = () => {
                 </svg>
               </div>
             </div>
-            <p className="hidden text-xs text-red-600 mt-2" id="password-error">
-              8+ characters required
-            </p>
+            {login.touched.password&&(
+              <p className="text-xs text-red-600 mt-2" id="password-error">
+
+                {login.errors.password}
+             
+              </p>
+
+            )
+            }
+            
           </div>
           {/* End Form Group */}
           {/* Checkbox */}

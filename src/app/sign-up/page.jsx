@@ -2,6 +2,23 @@
 import { useFormik } from 'formik'
 import React from 'react'
 
+import * as Yup from 'yup';
+
+const signUpSchema= Yup.object().shape({
+  name:Yup.string()
+  .min(2,'make it longer')
+  .max(50,'too long')
+  .required('Name is required'),
+  email: Yup.string().email('Invailed email').required('email is requied'),
+  password:Yup.string().required('password is required')
+  .matches(/[a-z]/,'must include a lower case')
+  .matches(/[A-Z]/,'must include a upper case')
+  .matches(/[0-9]/,'must include a number')
+  .matches(/\w/,'must include a special charater'),
+  confirmPassword: Yup.string().label('confirm password').required('confirm password is required').oneOf([Yup.ref('password'), null], 'Passwords must match'),
+
+})
+
 const signUp = () => {
   const signUp=useFormik({
     initialValues:{
@@ -17,7 +34,8 @@ const signUp = () => {
       console.log(values);
       
 
-    }
+    },
+    validationSchema:signUpSchema
   })
   return (
     <div className='flex justify-center items-center'>
@@ -107,9 +125,17 @@ const signUp = () => {
                 </svg>
               </div>
             </div>
-            <p className="hidden text-xs text-red-600 mt-2" id="email-error">
-              Please include a valid email address so we can get back to you
-            </p>
+            {
+              signUp.touched.name&&(
+                <p className="text-xs text-red-600 mt-2" id="name-error">
+                  {signUp.errors.name}
+                   </p>
+
+              )
+            }
+           
+             
+           
           </div>
           <div>
             <label
@@ -142,9 +168,17 @@ const signUp = () => {
                 </svg>
               </div>
             </div>
-            <p className="hidden text-xs text-red-600 mt-2" id="email-error">
-              Please include a valid email address so we can get back to you
+            {
+              signUp.touched.email&&(
+
+                <p className=" text-xs text-red-600 mt-2" id="email-error">
+                  {signUp.errors.email}
+              
             </p>
+
+              )
+            }
+            
           </div>
           {/* End Form Group */}
           {/* Form Group */}
@@ -178,9 +212,16 @@ const signUp = () => {
                 </svg>
               </div>
             </div>
-            <p className="hidden text-xs text-red-600 mt-2" id="password-error">
-              8+ characters required
+            {
+              signUp.touched.password&&(
+                <p className=" text-xs text-red-600 mt-2" id="password-error">
+                  {signUp.errors.password}
+             
             </p>
+
+              )
+            }
+            
           </div>
           {/* End Form Group */}
           {/* Form Group */}
@@ -215,12 +256,17 @@ const signUp = () => {
                 </svg>
               </div>
             </div>
-            <p
-              className="hidden text-xs text-red-600 mt-2"
-              id="confirm-password-error"
-            >
-              Password does not match the password
+            {
+              signUp.touched.confirmPassword&&(
+                <p
+              className=" text-xs text-red-600 mt-2">
+                {signUp.errors.confirmPassword}
+              
             </p>
+
+              )
+            }
+            
           </div>
           {/* End Form Group */}
           {/* Checkbox */}

@@ -1,15 +1,20 @@
 'use client'
 
-import React,{Component} from 'react';
-// import {header}'./compoents/header';
+import React from 'react';
+// import {header}'./compoents/header';'
+import Header from '@/components/header';
+import Main from '@/components/main';
+import Footer from '@/components/footer';
+
+
 
 const HOME = () => {
   return (
-    <div>
-      <h1>
-      HOME PAGE
-      </h1>
-    </div>
+    <>
+    <Header></Header>
+    <Main/>
+    <Footer/>
+        </>
   )
 }
 
