@@ -16,7 +16,7 @@ export default function Main() {
               href="/"
             >
               <div className="flex text-lg">
-                <span className="justify-center">View All Templates</span>
+                <span className="justify-center">View All Library</span>
               </div>
             </a>
             <a
@@ -33,7 +33,7 @@ export default function Main() {
           <img
             className="object-cover object-center w-3/4 mb-10 border shadow-md g327"
             alt="Placeholder Image"
-            src="./images/placeholder.png"
+            src="https://images.unsplash.com/photo-1721332155433-3a4b5446bcd9?q=80&w=1935&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
           ></img>
         </div>
         <h2 className="pt-40 mb-1 text-2xl font-semibold tracking-tighter text-center text-gray-200 lg:text-7xl md:text-6xl">

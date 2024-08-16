@@ -18,14 +18,34 @@ const loginSchema= Yup.object().shape({
 const Login = () => {
   const login=useFormik({
     initialValues:{
+      name:"",
       email:"",
       password:"",
+      confirmPassword:"",
 
     },
     onSubmit(values,{resetForm,setSubmitting}){
       console.log(values);
-      resetForm();
-      setSubmitting();
+     
+      axios.post('http://localhost:5001/user/add', values)
+      .then((response) => {
+        console.log(response.status);
+        resetForm();
+        toast.success('user added successfully')
+        router.push('/');
+
+        
+        
+      }).catch((err) => {
+        console.log(err);
+        if(err.response.data.code ===11000){
+          toast.error('Email already exists');
+        }
+        setSubmitting(false);
+
+        
+        
+      });
       
 
     },

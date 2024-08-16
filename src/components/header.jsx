@@ -12,7 +12,7 @@ export default function Header() {
           <a
             href="/"
             class="flex text-3xl text-white font-medium mb-4 md:mb-0"
-          >NINE4
+          >React Library
           </a>
           <button
             className="text-white pb-4 cursor-pointer leading-none px-3 py-1 md:hidden outline-none focus:outline-none content-end ml-auto"
@@ -56,7 +56,7 @@ export default function Header() {
                   "
                 onMouseEnter={() => (setFlyer(!flyer), setFlyerTwo(false))}
               >
-                <span className="tr04">Templates</span>
+                <span className="tr04">Library</span>
                 <svg
                   className={
                     flyer === true
