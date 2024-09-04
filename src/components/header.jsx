@@ -6,7 +6,7 @@ export default function Header() {
   const [flyerTwo, setFlyerTwo] = React.useState(false);
 
   return (
-    <header class="fixed top-0 w-full clearNav z-50 bg-black">
+    <header class="fixed top-0 w-full clearNav z-50 bg-gradient-to-r from-white via-blue-500 to-blue-800 text-transparent">
       <div class="max-w-5xl mx-auto flex flex-wrap p-5 flex-col md:flex-row ">
         <div className="flex flex-row items-center justify-between p-3 md:p-1">
           <a
@@ -128,11 +128,16 @@ export default function Header() {
                 </div>
               </div>
             </div>
-            <a class="mr-12 md:ml-11 ml-0 cursor-pointer text-gray-300 hover:text-white font-semibold tr04">
-              Pricing
+            <a class="mr-12 md:ml-11 ml-0 cursor-pointer text-gray-300 hover:text-white font-semibold tr04"
+            href="/sign-in">
+            Login
             </a>
-            <a class="mr-5 cursor-pointer text-gray-300 hover:text-white font-semibold tr04">
-              Careers
+            <a class="mr-5 cursor-pointer text-gray-300 hover:text-white font-semibold tr04"
+            href="/sign-up"
+            hrefLang="/sign-in"
+            >
+              
+              SignUp
             </a>
           </div>
           <a
