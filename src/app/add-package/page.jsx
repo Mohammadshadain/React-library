@@ -2,7 +2,7 @@
 'use client'
 
 import React from 'react'
-import Image from '../hero.png';
+// import Image from '../hero.png';
 import { useFormik } from 'formik';
 import * as Yup from "yup";
 import axios from 'axios';
@@ -144,7 +144,9 @@ const Login = () => {
         <div
           className="m-12 xl:m-16 w-full bg-contain bg-center bg-no-repeat"
           
-        ><img src={Image.src} alt="" /></div>
+        >
+          {/* <img src={Image.src} alt="" /> */}
+          </div>
       </div>
     </div>
   </div>
