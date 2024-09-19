@@ -1,24 +1,21 @@
-'use client'
+"use client"
 
-import React from 'react';
-// import {header}'./compoents/header';'
-import Header from '@/components/header';
-import Main from '@/components/main';
-import Footer from '@/components/footer';
-import Card from '@/components/Card';
+import React from "react";
 
-
+import Main from "@/components/Main";
+import Footer from "@/components/Footer";
+import Header from "../components/Header";
 
 const HOME = () => {
   return (
     <>
-    <Header></Header>
-    <Main/>
-    <Card/>
-   
-    <Footer/>
-        </>
-  )
-}
+      <Header/>
+      <Main />
+      {/* <Card /> */}
 
-export default HOME
+      <Footer />
+    </>
+  );
+};
+
+export default HOME;
