@@ -27,6 +27,7 @@ const Login = () => {
       version: "",
       tags:"",
       description:"",
+      image : ""
     },
     onSubmit: (values) => {
       console.log(values);
@@ -44,6 +45,27 @@ const Login = () => {
     },
     validationSchema: LoginSchema,
   });
+
+  const uploadToCloud = (e) => {
+    const file = e.target.files[0];
+    if (!file) return;
+    const fd = new FormData();
+    fd.append("file", file);
+    fd.append("upload_preset", "msd5007");
+    fd.append("cloud_name", "dqxnkd8jq");
+
+    axios
+      .post('https://api.cloudinary.com/v1_1/dqxnkd8jq/image/upload', fd, {
+        headers: { 'Content-Type': 'multipart/form-data' }
+      })
+      .then((response) => {
+        console.log(response.data);
+        loginForm.setFieldValue("image", response.data.url);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
 
   return (
     <>
@@ -90,11 +112,16 @@ const Login = () => {
                   onSubmit={loginForm.handleSubmit}
                 >
                   <input
+                    onChange={uploadToCloud}
+                    className="w-full px-5 py-4 rounded-lg font-medium bg-gray-100 border border-gray-200 placeholder-gray-500 text-sm focus:outline-none focus:border-gray-400 focus:bg-white"
+                    type="file"
+                  />
+                  <input
                     id="name"
                     onChange={loginForm.handleChange}
                     value={loginForm.values.name}
-                    className="w-full px-5 py-4 rounded-lg font-medium bg-gray-100 border border-gray-200 placeholder-gray-500 text-sm focus:outline-none focus:border-gray-400 focus:bg-white"
-                    type="name"
+                    className="mt-3 w-full px-5 py-4 rounded-lg font-medium bg-gray-100 border border-gray-200 placeholder-gray-500 text-sm focus:outline-none focus:border-gray-400 focus:bg-white"
+                    type="text"
                     placeholder="Name"
                   />
                   <input
@@ -114,6 +141,15 @@ const Login = () => {
                     placeholder="version"
                   />
                   <input
+                    id="tags"
+                    onChange={loginForm.handleChange}
+                    value={loginForm.values.tags}
+                    className="mt-3 w-full px-5 py-4 rounded-lg font-medium bg-gray-100 border border-gray-200 placeholder-gray-500 text-sm focus:outline-none focus:border-gray-400 focus:bg-white"
+                    type="text"
+                    placeholder="tags"
+                  />
+                  
+                  <input
                     id="description"
                     onChange={loginForm.handleChange}
                     value={loginForm.values.description}
@@ -123,7 +159,7 @@ const Login = () => {
                   />
                   {loginForm.touched.description && (
                     <p className=" text-xs text-red-600 mt-2" id="email-error">
-                      {loginForm.errors.descriptionl}
+                      {loginForm.errors.description}
                     </p>
                   )}
                   

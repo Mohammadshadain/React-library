@@ -5,6 +5,7 @@ import Main from "../components/main";
 import Footer from "../components/footer";
 import Header from "../components/Header";
 import { PlaceholdersAndVanishInputDemo } from "../components/PlaceholdersAndVanishInputDemo";
+import Navbar from "../components/Navbar";
 
 const HOME = () => {
   return (
@@ -15,6 +16,7 @@ const HOME = () => {
       {/* <Card /> */}
 
       <Footer />
+      <Navbar/>
     </>
   );
 };

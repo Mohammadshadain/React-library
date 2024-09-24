@@ -6,11 +6,22 @@ import React, { useEffect, useState } from "react";
 
 const Listing = () => {
   const [libraryList, setLibraryList] = useState([]);
+  const [masterList, setMasterList] = useState([]);
 
   const fetchLibraryData = async () => {
     const res = await axios.get("http://localhost:5000/library/getall");
     console.log(res.data);
     setLibraryList(res.data);
+    setMasterList(res.data);
+  };
+
+  const searchPackage = (e) => {
+    const value = e.target.value;
+    setLibraryList(
+      masterList.filter((lib) =>
+        lib.name.toLowerCase().includes(value.toLowerCase())
+      )
+    );
   };
 
   useEffect(() => {
@@ -28,7 +39,7 @@ const Listing = () => {
             <div className="shrink-0 relative rounded-xl overflow-hidden w-full sm:w-56 h-44">
               <img
                 className="group-hover:scale-105 group-focus:scale-105 transition-transform duration-500 ease-in-out size-full absolute top-0 start-0 object-cover rounded-xl"
-                src="/logo-placeholder-image.png"
+                src={library.image || "/logo-placeholder-image.png"}
                 alt="Blog Image"
               />
             </div>
@@ -36,7 +47,7 @@ const Listing = () => {
               <h3 className="text-xl font-semibold text-gray-800 group-hover:text-gray-600 dark:text-neutral-300 dark:group-hover:text-white">
                 {library.name}
               </h3>
-              <p className="mt-3 text-gray-600 dark:text-neutral-400">Navtie</p>
+              <p className="mt-3 text-gray-600 dark:text-neutral-400">{library.description}</p>
               <Link
                 className="mt-4 inline-flex items-center gap-x-1 text-sm text-blue-600 decoration-2 group-hover:underline group-focus:underline font-medium dark:text-blue-500"
                 href={"/details/" + library._id}
@@ -90,6 +101,7 @@ const Listing = () => {
                       </label>
                       <input
                         type="email"
+                        onChange={searchPackage}
                         name="hs-search-article-1"
                         id="hs-search-article-1"
                         className="py-2.5 px-4 block w-full border-transparent rounded-lg focus:border-blue-500 focus:ring-blue-500 dark:bg-neutral-900 dark:border-transparent dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600"
