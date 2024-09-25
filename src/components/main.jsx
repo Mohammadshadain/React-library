@@ -46,15 +46,15 @@ export default function Main() {
         </p>
         <div className="pt-12 pb-24 max-w-4xl mx-auto fsac4 md:px-1 px-3">
           <div class="ktq4">
-            <img className="w-10" src="https://nine4.app/favicon.png"></img>
-            <h3 class="pt-3 font-semibold text-lg text-white">
-              Lorem ipsum dolor sit amet
-            </h3>
-            <p class="pt-2 value-text text-md text-gray-200 fkrr1">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas
-              tincidunt a libero in finibus. Maecenas a nisl vitae ante rutrum
-              porttitor.
-            </p>
+            {/* <p>
+              {libraryDetails.logo}
+            </p> */}
+            {/* <h3 class="pt-3 font-semibold text-lg text-white">
+              {libraryDetails.name}
+            </h3> */}
+            {/* <p class="pt-2 value-text text-md text-gray-200 fkrr1">
+             {libraryDetails.description}
+            </p> */}
           </div>
           <div class="ktq4">
             <img className="w-10" src="https://nine4.app/favicon.png"></img>

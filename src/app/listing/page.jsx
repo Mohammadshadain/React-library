@@ -83,10 +83,14 @@ const Listing = () => {
           <div className="max-w-[85rem] mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-24">
             <div className="text-center">
               <h1 className="text-4xl sm:text-6xl font-bold text-gray-800 dark:text-neutral-200">
-                Insights
+              Libraries
               </h1>
               <p className="mt-3 text-gray-600 dark:text-neutral-400">
-                Stay in the know with insights from industry experts.
+                Most Powerful React Libraries
+
+to Try for your Projects
+
+Ready-to-use Libraries for your Apps
               </p>
               <div className="mt-7 sm:mt-12 mx-auto max-w-xl relative">
                 {/* Form */}

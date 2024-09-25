@@ -27,7 +27,7 @@
     ".next/types/**/*.ts",
     "**/*.ts",
     "**/*.tsx"
-, "src/app/lib/cn.ts", "src/components/PlaceholdersAndVanishInputDemo.jsx", "src/components/ui/placeholders-and-vanish-input.jsx"  ],
+, "src/app/lib/cn.ts", "src/components/PlaceholdersAndVanishInputDemo.jsx", "src/components/ui/placeholders-and-vanish-input.jsx", "src/components/ui/navbar-menu.jsx", "src/components/Navbar.jsx", "src/lib/cn.js"  ],
   "exclude": [
     "node_modules"
   ]

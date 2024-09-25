@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-// import Image from '../hero.png';
+// import Image from '@/hero.jpg'; 
 import { useFormik } from "formik";
 import * as Yup from "yup";
 import axios from "axios";
@@ -34,7 +34,7 @@ const Login = () => {
       axios
         .post("http://localhost:5000/library/add", values)
         .then((result) => {
-          toast.success("Login Success");
+          toast.success("add Successfully");
           
           router.push("/");
         })
