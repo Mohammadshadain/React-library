@@ -47,11 +47,7 @@ export default function Main() {
           styled with Tailwind CSS.
         </p>
           <div className="pt-12 pb-24 max-w-4xl mx-auto fsac4 md:px-1 px-3">
-<<<<<<< HEAD
          
-=======
-          
->>>>>>> origin/fix_main
           <div class="ktq4">
             <img className="w-10" src="https://nine4.app/favicon.png"></img>
             <h3 class="pt-3 font-semibold text-lg text-white">
