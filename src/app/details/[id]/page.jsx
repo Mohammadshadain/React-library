@@ -40,13 +40,13 @@ const LibDetails = () => {
             <figure className="flex flex-col justify-center items-center p-8 bg-gray-50 border-b border-gray-200 md:p-12 lg:border-r dark:bg-gray-800 dark:border-gray-700">
               <figcaption className="flex items-center space-x-3 mb-8">
                 <img
-                  className="w-12 h-12 rounded-full"
+                  className="w-48 h-28 rounded-lg"
                   src={libraryDetails.image || '/logo-placeholder-image.png'}
                   alt="profile picture"
                 />
-                <div className="space-y-0.5 font-bold dark:text-white text-left">
+                <div className="space-y-0.5 font-bold text-5xl dark:text-white text-left">
                   <div>{libraryDetails.name}</div>
-                  <div className="text-sm font-light text-gray-500 dark:text-gray-400">
+                  <div className=" font-light text-lg text-gray-500 dark:text-gray-400">
                   {libraryDetails.version}
                   </div>
                 </div>
