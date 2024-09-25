@@ -1,5 +1,3 @@
-import Link from "next/link";
-
 export default function Main() {
     return (
       <section class="text-gray-600 body-font bg-black">
@@ -21,14 +19,14 @@ export default function Main() {
                 <span className="justify-center">View All Library</span>
               </div>
             </a>
-            <Link
+            <a
               className="inline-flex items-center py-3 font-semibold tracking-tighter text-white transition duration-500 ease-in-out transform bg-transparent ml-11 bg-gradient-to-r from-blue-500 to-blue-800 px-14 text-md md:mt-0 focus:shadow-outline"
-              href="/add-package"
+              href="/"
             >
               <div className="flex text-lg">
-                <span className="justify-center">Add Libraries</span>
+                <span className="justify-center">Purchase</span>
               </div>
-            </Link>
+            </a>
           </div>
         </div>
         <div className="container flex flex-col items-center justify-center mx-auto">
@@ -47,7 +45,7 @@ export default function Main() {
           styled with Tailwind CSS.
         </p>
           <div className="pt-12 pb-24 max-w-4xl mx-auto fsac4 md:px-1 px-3">
-         
+          
           <div class="ktq4">
             <img className="w-10" src="https://nine4.app/favicon.png"></img>
             <h3 class="pt-3 font-semibold text-lg text-white">

@@ -7,6 +7,7 @@ import React, { useEffect, useState } from "react";
 const Listing = () => {
   const [libraryList, setLibraryList] = useState([]);
   const [masterList, setMasterList] = useState([]);
+  
 
   const fetchLibraryData = async () => {
     const res = await axios.get("http://localhost:5000/library/getall");
@@ -29,7 +30,7 @@ const Listing = () => {
   }, []);
 
   const displayLibraries = () => {
-    if (libraryList.length > 0) {
+    if (libraryList.length > 0 ) {
       return libraryList.map((library) => (
         <Link
           className="group block rounded-xl overflow-hidden focus:outline-none"
