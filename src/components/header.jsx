@@ -47,12 +47,7 @@ export default function Header() {
           }
         >
           <div class="md:ml-auto md:mr-auto font-4 pt-1 md:pl-14 pl-1 flex flex-wrap items-center md:text-base text-1xl md:justify-center justify-items-start">
-            <div class="mr-11 pr-2 cursor-pointer text-gray-300 hover:text-white font-semibold tr04">
-              Add-Package
-             <Link href= '/add-package'>
-             
-             </Link>
-            </div>
+           
             <div className="relative">
               <button
                 type="button"
