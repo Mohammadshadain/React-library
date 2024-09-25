@@ -8,6 +8,7 @@ import axios from "axios";
 import toast from "react-hot-toast";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
+import Image from "next/image";
 
 const LoginSchema = Yup.object().shape({
   name: Yup.string()
@@ -203,9 +204,17 @@ const Login = () => {
               </div>
             </div>
           </div>
-          <div className="flex-1 bg-green-100 text-center hidden lg:flex">
-            <div className="m-12 xl:m-16 w-full bg-contain bg-center bg-no-repeat">
-              {/* <img src={Image.src} alt="" /> */}
+          <div className="flex-1 bg-green-100 text-center hidden lg:flex justify-center items-center">
+            <div className="mt-12 xl:m-16 w-full bg-contain bg-center bg-no-repeat">
+             <Image
+             src = '/hero.png'
+             height={200}
+             width={600}
+             quality={100}
+             priority
+             />
+
+            
             </div>
           </div>
         </div>
