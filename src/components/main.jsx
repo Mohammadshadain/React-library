@@ -1,3 +1,8 @@
+import Image from "next/image";
+import Link from "next/link";
+
+
+
 export default function Main() {
     return (
       <section class="text-gray-600 body-font bg-black">
@@ -19,14 +24,14 @@ export default function Main() {
                 <span className="justify-center">View All Library</span>
               </div>
             </a>
-            <a
+            <Link
               className="inline-flex items-center py-3 font-semibold tracking-tighter text-white transition duration-500 ease-in-out transform bg-transparent ml-11 bg-gradient-to-r from-blue-500 to-blue-800 px-14 text-md md:mt-0 focus:shadow-outline"
-              href="/"
+              href="/add-package"
             >
               <div className="flex text-lg">
-                <span className="justify-center">Purchase</span>
+                <span className="justify-center">Add Libraries</span>
               </div>
-            </a>
+            </Link>
           </div>
         </div>
         <div className="container flex flex-col items-center justify-center mx-auto">
@@ -37,77 +42,70 @@ export default function Main() {
           ></img>
         </div>
         <h2 className="pt-40 mb-1 text-2xl font-semibold tracking-tighter text-center text-gray-200 lg:text-7xl md:text-6xl">
-          Clean and tidy code.
+          Most Trending Libraries
         </h2>
         <br></br>
         <p className="mx-auto text-xl text-center text-gray-300 font-normal leading-relaxed fs521 lg:w-2/3">
-          Here is our collection of free to use templates made with Next.js &
-          styled with Tailwind CSS.
+          Here is our collection of free to use libraries.
         </p>
-          <div className="pt-12 pb-24 max-w-4xl mx-auto fsac4 md:px-1 px-3">
+          <div className="flex flex-col gap-12 pt-12 pb-24 max-w-4xl mx-auto fsac4 md:px-1 px-3">
           
-          <div class="ktq4">
-            <img className="w-10" src="https://nine4.app/favicon.png"></img>
-            <h3 class="pt-3 font-semibold text-lg text-white">
-              Lorem ipsum dolor sit amet
+          <Link class="ktq4 flex flex-row gap-4"
+          href='/details/66f3221fd65e67802da63c55'>
+
+            <Image
+            src = '/react-router.jpg'
+            width={150}
+            height={50}
+            />
+            <div>
+            <h3 class=" font-semibold text-3xl text-white">
+            React Router Dom
             </h3>
             <p class="pt-2 value-text text-md text-gray-200 fkrr1">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas
-              tincidunt a libero in finibus. Maecenas a nisl vitae ante rutrum
-              porttitor.
+            Enables dynamic routing and navigation in React apps, allowing single-page applications to have a smooth experience without refreshing the page.
             </p>
-          </div>
-          <div class="ktq4">
-            <img className="w-10" src="https://nine4.app/favicon.png"></img>
-            <h3 class="pt-3 font-semibold text-lg text-white">
-              Lorem ipsum dolor sit amet
+            </div>
+          </Link>
+          <Link class="ktq4 flex flex-row gap-4"
+          href='/details/66f32d49be307496bbc1590f'>
+
+            <Image
+            src = '/farmer.jpg'
+            width={150}
+            height={50}
+            />
+            <div>
+            <h3 class=" font-semibold text-3xl text-white">
+            Framer Motion
             </h3>
             <p class="pt-2 value-text text-md text-gray-200 fkrr1">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas
-              tincidunt a libero in finibus. Maecenas a nisl vitae ante rutrum
-              porttitor.
+            A powerful animation library offering simple yet expressive APIs for building complex animations and transitions. It supports gestures, drag, hover, and scroll animations.
             </p>
-          </div>
-          <div class="ktq4">
-            <img className="w-10" src="https://nine4.app/favicon.png"></img>
-            <h3 class="pt-3 font-semibold text-lg text-white">
-              Lorem ipsum dolor sit amet
+            </div>
+          </Link>
+          
+          <Link class="ktq4 flex flex-row gap-4"
+          href='/details/66f32823be307496bbc158fb'>
+
+            <Image
+            src = '/axios.jpg'
+            width={150}
+            height={50}
+            />
+            <div>
+            <h3 class=" font-semibold text-3xl text-white">
+            Axios
             </h3>
             <p class="pt-2 value-text text-md text-gray-200 fkrr1">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas
-              tincidunt a libero in finibus. Maecenas a nisl vitae ante rutrum
-              porttitor.
+            A promise-based HTTP client for making API requests from React apps. Axios is widely used for its ability to handle request and response transformations, interceptors, and timeouts.
             </p>
-          </div>
+            </div>
+          </Link>
+          
+        
         </div>
-        <div className="pt-32 pb-32 max-w-6xl mx-auto fsac4 md:px-1 px-3">
-          <div class="ktq4">
-            <img src="https://nine4.app/images/nine4-3.png"></img>
-            <h3 class="pt-3 font-semibold text-lg text-white">
-              Lorem ipsum dolor sit amet
-            </h3>
-            <p class="pt-2 value-text text-md text-gray-200 fkrr1">
-              Fusce pharetra ligula mauris, quis faucibus lectus elementum vel.
-              Nullam vehicula, libero at euismod tristique, neque ligula faucibus
-              urna, quis ultricies massa enim in nunc. Vivamus ultricies, quam ut
-              rutrum blandit, turpis massa ornare velit, in sodales tellus ex nec
-              odio.
-            </p>
-          </div>
-          <div class="ktq4">
-            <img src="https://nine4.app/images/nine4-3.png"></img>
-            <h3 class="pt-3 font-semibold text-lg text-white">
-              Lorem ipsum dolor sit amet
-            </h3>
-            <p class="pt-2 value-text text-md text-gray-200 fkrr1">
-              Fusce pharetra ligula mauris, quis faucibus lectus elementum vel.
-              Nullam vehicula, libero at euismod tristique, neque ligula faucibus
-              urna, quis ultricies massa enim in nunc. Vivamus ultricies, quam ut
-              rutrum blandit, turpis massa ornare velit, in sodales tellus ex nec
-              odio.
-            </p>
-          </div>
-        </div>
+      
         <section class="relative pb-24">
           <div class="max-w-6xl mx-auto px-4 sm:px-6 text-center">
             <div class="py-24 md:py-36">
