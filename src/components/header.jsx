@@ -71,6 +71,7 @@ export default function Header() {
                 </div>
               </div>
             </div>
+            <div className="pl-64 ">
             <a class="mr-12 md:ml-11 ml-0 cursor-pointer text-gray-300 hover:text-white font-semibold tr04"
             href="/sign-in">
             Login
@@ -82,6 +83,7 @@ export default function Header() {
               
               SignUp
             </a>
+            </div>
           </div>
           <a
             href="https://twitter.com/"
