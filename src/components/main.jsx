@@ -7,7 +7,7 @@ export default function Main() {
     return (
       <section class="text-gray-600 body-font bg-black">
         <div class="max-w-5xl pt-52 pb-24 mx-auto">
-          <h1 class="text-80 text-center font-4 lh-6 ld-04 font-bold text-white mb-6">
+          <h1 class="text-5xl text-center font-4 lh-6 ld-04 font-bold text-white mb-6">
             Add Your Favourite Library
           </h1>
           <h2 class="text-2xl font-4 font-semibold lh-6 ld-04 pb-11 text-gray-700 text-center">
