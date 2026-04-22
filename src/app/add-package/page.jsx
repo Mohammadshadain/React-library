@@ -192,6 +192,7 @@ const Login = () => {
              height={200}
              width={600}
              quality={100}
+             alt=""
              priority
              />
 

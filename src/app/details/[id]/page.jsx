@@ -39,7 +39,7 @@ const LibDetails = () => {
           <div className="w-full grid mb-8 lg:mb-12 lg:grid-cols-1 mx-auto">
             <figure className="flex flex-col justify-center items-center p-8 bg-gray-50 border-b border-gray-200 md:p-12 lg:border-r dark:bg-gray-800 dark:border-gray-700">
               <figcaption className="flex items-center space-x-3 mb-8">
-                <img
+                <image
                   className="w-48 h-28 rounded-lg"
                   src={libraryDetails.image || '/logo-placeholder-image.png'}
                   alt="profile picture"

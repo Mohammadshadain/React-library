@@ -84,7 +84,7 @@ export default function Header() {
             </a>
           </div>
           <a
-            href="https://twitter.com/"
+            href="https://x.com/MShadain"
             rel="noopener noreferrer"
             target="_blank"
             className="invisible md:visible"
@@ -106,7 +106,7 @@ export default function Header() {
           </a>
           <a
             data-v-54e46119=""
-            href="https://github.com/"
+            href="https://github.com/Mohammadshadain"
             rel="noopener noreferrer"
             target="_blank"
             className="pl-7 invisible md:visible"
