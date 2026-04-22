@@ -9,7 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@eartho/one-client-react": "^2.1.0",
+    
     "@headlessui/react": "^2.1.2",
     "@radix-ui/react-label": "^2.1.0",
     "@react-three/drei": "^9.111.2",
