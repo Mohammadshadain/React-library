@@ -11,7 +11,6 @@ const LibDetails = () => {
     axios
       .get("http://localhost:5000/library/getbyid/" + id)
       .then((result) => {
-        console.log(result.data);
         setLibraryDetails(result.data);
       })
       .catch((err) => {
@@ -21,108 +20,60 @@ const LibDetails = () => {
 
   useEffect(() => {
     fetchLibarayData();
-  }, []);
+  }, [id]); // ✅ fixed dependency
 
   return (
     <section className="bg-white dark:bg-gray-900">
       {libraryDetails !== null ? (
-        <div className="w-full py-8 px-12 mx-auto  text-center lg:py-16 lg:px-16">
+        <div className="w-full py-8 px-12 mx-auto text-center lg:py-16 lg:px-16">
           <div className="mx-auto max-w-screen w-full">
-            <h2 className="mb-4 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white">
+            <h2 className="mb-4 text-4xl font-extrabold text-gray-900 dark:text-white">
               React libraries Details
             </h2>
-            <p className="mb-8 font-light text-gray-500 lg:mb-16 sm:text-xl dark:text-gray-400">
-              Explore the whole collection of open-source web components and
-              elements built with the utility classes from Tailwind
-            </p>
           </div>
+
           <div className="w-full grid mb-8 lg:mb-12 lg:grid-cols-1 mx-auto">
-            <figure className="flex flex-col justify-center items-center p-8 bg-gray-50 border-b border-gray-200 md:p-12 lg:border-r dark:bg-gray-800 dark:border-gray-700">
+            <figure className="flex flex-col justify-center items-center p-8 bg-gray-50 dark:bg-gray-800">
+
               <figcaption className="flex items-center space-x-3 mb-8">
+
+                {/* ✅ FIXED HERE */}
                 <img
                   className="w-48 h-28 rounded-lg"
                   src={libraryDetails.image || '/logo-placeholder-image.png'}
-                  alt="profile picture"
+                  alt="library"
                 />
-                <div className="space-y-0.5 font-bold text-5xl dark:text-white text-left">
+
+                <div className="font-bold text-5xl text-left text-white">
                   <div>{libraryDetails.name}</div>
-                  <div className=" font-light text-lg text-gray-500 dark:text-gray-400">
-                  {libraryDetails.version}
+                  <div className="text-lg text-gray-400">
+                    {libraryDetails.version}
                   </div>
                 </div>
+
               </figcaption>
-              <blockquote className="mx-auto mb-8 max-w-2xl text-gray-500 dark:text-gray-400">
-                <h3 className="text-lg font-semibold text-gray-900 dark:text-white">
-                  {libraryDetails.category}
-                </h3>
+
+              <blockquote className="max-w-2xl text-gray-400">
                 <p className="my-4">
-                 {libraryDetails.description}
+                  {libraryDetails.description}
                 </p>
-                
+
                 <div className="space-y-3">
-                  <dl className="flex flex-col sm:flex-row gap-1">
-                    <dt className="min-w-40">
-                      <span className="block text-sm text-gray-500 dark:text-neutral-500">
-                        Name:
-                      </span>
-                    </dt>
-                    <dd>
-                      <p className="text-white">{libraryDetails.name}</p>
-                    </dd>
-                  </dl>
-                  <dl className="flex flex-col sm:flex-row gap-1">
-                    <dt className="min-w-40">
-                      <span className="block text-sm text-gray-500 dark:text-neutral-500">
-                        Package Name:
-                      </span>
-                    </dt>
-                    <dd>
-                     <p className="text-white"> {libraryDetails.packageName}</p>
-                    </dd>
-                  </dl>
-                  <dl className="flex flex-col sm:flex-row gap-1">
-                    <dt className="min-w-40">
-                      <span className="block text-sm text-gray-500 dark:text-neutral-500">
-                        Version:
-                      </span>
-                    </dt>
-                    <dd>
-                      <p className="text-white">{libraryDetails.version}</p>
-                    </dd>
-                  </dl>
-                  <dl className="flex flex-col sm:flex-row gap-1">
-                    <dt className="min-w-40">
-                      <span className="block text-sm text-gray-500 dark:text-neutral-500">
-                        tags:
-                      </span>
-                    </dt>
-                    <dd>
-                      <p className="text-white">{libraryDetails.tags}</p>
-                    </dd>
-                  </dl>
-                  <dl className="flex flex-col sm:flex-row gap-1">
-                    <dt className="min-w-40">
-                      <span className="block text-sm text-gray-500 dark:text-neutral-500">
-                        Description:
-                      </span>
-                    </dt>
-                    <dd>
-                      <p className="text-white">
-                        {libraryDetails.description}
-                      </p>
-                    </dd>
-                  </dl>
+
+                  <p><strong>Name:</strong> {libraryDetails.name}</p>
+                  <p><strong>Package:</strong> {libraryDetails.packageName}</p>
+                  <p><strong>Version:</strong> {libraryDetails.version}</p>
+                  <p><strong>Tags:</strong> {libraryDetails.tags}</p>
+                  <p><strong>Description:</strong> {libraryDetails.description}</p>
+
                 </div>
               </blockquote>
-            </figure>
-          </div>
 
-          <div>
-            <></>
+            </figure>
           </div>
         </div>
       ) : (
-        <h1>Loading ... </h1>
+        <h1>Loading ...</h1>
       )}
     </section>
   );
