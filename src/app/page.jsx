@@ -9,6 +9,7 @@ import Card from "../components/card"; // ✅ added import
 export default function Home() {
   return (
     <>
+    {/* //hhhhhhhhhhhhhh */}
       <Header />
       <Main />
       <Card />
