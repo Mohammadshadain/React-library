@@ -1,24 +1,19 @@
-"use client"
+"use client";
 
 import React from "react";
 import Main from "../components/main";
 import Footer from "../components/footer";
 import Header from "../components/header";
+import Card from "../components/card"; // ✅ added import
 
-
-
-const HOME = () => {
+export default function Home() {
   return (
     <>
-      {/* <PlaceholdersAndVanishInputDemo/> */}
-      <Header/>
-      <Main/>
-      {/* <Card /> */}
-
+    {/* //hhhhhhhhhhhhhh */}
+      <Header />
+      <Main />
+      <Card />
       <Footer />
-      
     </>
   );
-};
-
-export default HOME;
+}
